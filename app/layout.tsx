@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <SidebarProvider className="dark">
-      <AppSidebar className="bg-neutral-900" />
+      <AppSidebar />
       <main className="w-full">
-        <SidebarTrigger className="fixed" />
+        <SidebarTrigger className="fixed text-white" />
         <div>
           {children}
         </div>

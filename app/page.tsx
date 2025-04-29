@@ -18,20 +18,16 @@ export default function Home() {
   }
 
   return (
-    <div className="p-4 pt-8 h-full">
-     <Card className="w-full h-full justify-between">
-      <CardHeader>
-      <CardTitle>Chat</CardTitle>
-      </CardHeader>
-      <CardContent>
-      </CardContent>
-      <CardFooter>
-        <form onSubmit={handleSubmit} className="flex w-full gap-2">
-          <Input />
-          <Button className="bg-neutral-50 text-black cursor-pointer">Send</Button>
-        </form>
-      </CardFooter>
-     </Card>
+    <div className="p-4 pt-8 h-full flex flex-col gap-2">
+      <div className="flex gap-2">
+        <Card className='w-full'></Card>
+        <Card className='w-full'></Card>
+      </div>
+      <div className="flex gap-2">
+        <Card className='w-full'></Card>
+        <Card className='w-full'></Card>
+      </div>
+      <Card></Card>
     </div>
   );
 }

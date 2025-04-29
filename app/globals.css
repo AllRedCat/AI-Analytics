@@ -34,7 +34,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --foreground: #ededed; */
+    --foreground: #4d4c4c;
   }
 }
 
@@ -45,7 +46,8 @@ body {
 }
 
 .dark {
-  --sidebar: hsl(240 5.9% 10%);
+  /* --sidebar: hsl(240 5.9% 10%); */
+  --sidebar: hsl(0, 0%, 6%);
   --sidebar-foreground: hsl(240 4.8% 95.9%);
   --sidebar-primary: hsl(224.3 76.3% 48%);
   --sidebar-primary-foreground: hsl(0 0% 100%);

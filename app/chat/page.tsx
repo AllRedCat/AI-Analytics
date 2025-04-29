@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div className="p-4 pt-8 h-full">
      <Card className="w-full h-full justify-between">
-      <CardHeader>
+      <CardHeader className='text-white'>
       <CardTitle>Chat</CardTitle>
       </CardHeader>
       <CardContent>

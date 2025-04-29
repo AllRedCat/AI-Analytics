@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <SidebarProvider className="dark">
       <AppSidebar />
-      <main className="w-full">
+      <main className="w-full dark">
         <SidebarTrigger className="fixed text-white" />
         <div>
           {children}

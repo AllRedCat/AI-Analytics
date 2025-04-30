@@ -12,9 +12,29 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
+import { POST } from '@/api/gemini/route';
+
 export default function Home() {
+  
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const message = formData.get('message') as string;
+
+    if (message) {
+      try {
+        const request = new Request('/api/gemini', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt: message }),
+        });
+        const response = await POST(request);
+        console.log('Response:', response);
+      } catch (error) {
+        console.error('Error (page - chat):', error);
+      }
+    }
   }
 
   return (
@@ -27,9 +47,10 @@ export default function Home() {
       </CardContent>
       <CardFooter>
         <form onSubmit={handleSubmit} className="flex w-full gap-2">
-          <Input />
-          <Button className="bg-neutral-50 text-black cursor-pointer">Send</Button>
+          <Input name="message" />
+          <Button type='submit' className="bg-neutral-50 text-black cursor-pointer">Send</Button>
         </form>
+        {/* <EntryChat /> */}
       </CardFooter>
      </Card>
     </div>
